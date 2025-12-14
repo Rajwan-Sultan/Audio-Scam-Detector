@@ -141,7 +141,7 @@ async def parse_with_llm_audio(audio_bytes: bytes, mime_type: str, segment_numbe
     )
 
     response = await gemini_client.aio.models.generate_content(
-        model="gemini-2.5-flash-lite",
+        model="gemini-2.0-flash-lite",
         # model="gemini-2.0-flash-exp",
         contents=parts,
         config=generation_config
@@ -393,11 +393,9 @@ async def health_check():
         "gemini_client": gemini_status
     }
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8001,reload=True)
-    
-
+# if __name__ == "__main__":
+#     import uvicorn
+#     uvicorn.run(app, host="0.0.0.0", port=8001)
 
 
 
