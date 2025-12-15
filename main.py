@@ -171,7 +171,7 @@ async def parse_with_llm_text(file_content: str) -> OutputSchema:
 
     response = await gemini_client.aio.models.generate_content(
         # model="gemini-2.0-flash-exp",
-        model="gemini-2.0-flash-lite",
+        model="gemini-2.5-flash-lite",
         contents=parts,
         config=generation_config
     )
